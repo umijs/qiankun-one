@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<body>
+  <div id="app2-container">app_2</div>
+  <script>
+    ; (global => {
+      global['app2'] = {
+        async bootstrap() {
+        },
+        async mount() {
+          document.getElementById('app2-container').innerHTML = "app_2 loaded"
+        },
+        async unmount() {
+        },
+      };
+    })(window);
+  </script>
+</body>
+
+</html>

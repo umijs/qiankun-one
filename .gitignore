@@ -1,0 +1,8 @@
+/yarn.lock
+/package-lock.json
+/.docz
+/node_modules
+.DS_Store
+
+/es
+/lib
