@@ -111,9 +111,9 @@ start();
 | ------ | ------ | ------ | ------ | ------ |
 | name  | 微应用名称，用以标识一个微应用 | String  | 是 | - |
 | entry  | 微应用的资源信息描述 | `String/[String, String]/<IAppManifest>`  | 是 | - |
-| activePath  | 微应用受当前路由影响的激活规则 | IActivePath  | 是 | - |
-| container  | 微应用挂载的节点 | HTMLElement  | 是 | - |
-| props  | 微应用传入的参数 | object   | 是 | - |
+| activePath  | 微应用受当前路由影响的激活规则 | `IActivePath`  | 是 | - |
+| container  | 微应用挂载的节点 | `HTMLElement`  | 是 | - |
+| props  | 微应用传入的参数 | `Object`   | 是 | - |
 
 ### IOptions - 微应用配置规范
 
