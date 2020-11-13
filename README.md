@@ -1,6 +1,6 @@
 # qiankun-one
 
-> 根据阿里巴巴统一微前端规范的适配的 qiankun 版本
+> 根据阿里巴巴微前端统一规范的完成适配的 qiankun 版本
 
 ## 与 qiankun 的关系
 
