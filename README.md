@@ -6,7 +6,7 @@
 
 19 年在阿里内部伴随各 BU 业务的发展，出现了 qiankun、icestark、alfa 等微前端框架，可满足各自温饱使用，但是周边生态建设很难相互使用，包括后续的互通使用，阿里巴巴前端委员会拉通各部们弄微前端的同学成立共建组，分成统一规范、推荐框架、管控治理、生态周边建设 4 个方向
 
-目前统一微前端规范初版已落地完成，为保证用户使用体验，暂不对原 qiankun 进行大升级防止存量业务问题，故跟进规范完成 qiankun 的上层接口规范适配产出 qiankun-one 框架供有需要的同学使用
+目前微前端规范初版已完成编写，icestark 和 alfa 完成升级适配，为保证 qiankun 同学使用体验，暂不对框架本身进行大升级防止存量业务问题，**故根据规范完成 qiankun 的上层接口规范适配，产出 qiankun-one 框架，供有需要的同学使用**
 
 ## Usage
 
@@ -95,22 +95,22 @@ start();
 
 | 配置	 | 说明	 | 类型	 | 是否必填	| 默认值 |
 | ------ | ------ | ------ | ------ | ------ |
-| setup  | 注册 app 微应用函数 | IConfig  | 是 | [] |
+| setup  | 注册 app 微应用函数 | `IConfig`  | 是 | [] |
 | start  | 开始运行微应用函数 | -  | 是 | - |
 
 ### IConfig - 微应用全局配置规范
 
 | 配置	 | 说明	 | 类型	 | 是否必填	| 默认值 |
 | ------ | ------ | ------ | ------ | ------ |
-| appConfigs  | 微应用配置集 | IAppConfig[]  | 是 | - |
-| options  | 额外的配置 | IOptions  | 是 | - |
+| appConfigs  | 微应用配置集 | `IAppConfig[]`  | 是 | - |
+| options  | 额外的配置 | `IOptions`  | 是 | - |
 
 ### IAppConfig - app 配置规范
 
 | 配置	 | 说明	 | 类型	 | 是否必填	| 默认值 |
 | ------ | ------ | ------ | ------ | ------ |
-| name  | 微应用名称，用以标识一个微应用 | string  | 是 | - |
-| entry  | 微应用的资源信息描述 | `string/[string, string]/<IAppManifest>`  | 是 | - |
+| name  | 微应用名称，用以标识一个微应用 | String  | 是 | - |
+| entry  | 微应用的资源信息描述 | `String/[String, String]/<IAppManifest>`  | 是 | - |
 | activePath  | 微应用受当前路由影响的激活规则 | IActivePath  | 是 | - |
 | container  | 微应用挂载的节点 | HTMLElement  | 是 | - |
 | props  | 微应用传入的参数 | object   | 是 | - |
@@ -120,10 +120,10 @@ start();
 | 配置	 | 说明	 | 类型	 | 是否必填	| 默认值 |
 | ------ | ------ | ------ | ------ | ------ |
 | sandbox  | 是否启用内置的沙箱隔离，或者使用自定义的沙箱实例。 | `boolean/ISandbox `  | 否 | false  |
-| prefetch  | 是否预加载微应用的资源。 | boolean  | 否 | false |
-| activePath  | 微应用受当前路由影响的激活规则。 | IActivePath  | 是 | - |
-| container  | 微应用挂载的节点。 | HTMLElement  | 是 | - |
-| props  | 微应用传入的参数 | object   | 是 | - |
+| prefetch  | 是否预加载微应用的资源。 | `Boolean`  | 否 | false |
+| activePath  | 微应用受当前路由影响的激活规则。 | `IActivePath`  | 是 | - |
+| container  | 微应用挂载的节点。 | `HTMLElement`  | 是 | - |
+| props  | 微应用传入的参数 | `Object`   | 是 | - |
 | beforeMount  | 微应用生命周期 - 加载前 | -   | - | - |
 | afterMount  | 微应用生命周期 - 加载后 | - | - | - |
 | beforeUnmount  | 微应用生命周期 -卸载前 | - | - | - |
@@ -135,8 +135,8 @@ start();
 
 | 配置	 | 说明	 | 类型	 | 是否必填	| 默认值 |
 | ------ | ------ | ------ | ------ | ------ |
-| script  | js 相关资源 | string[]  | 是 | -  |
-| styles  | css 相关资源  | string[]  | 是 | - |
+| script  | js 相关资源 | `String[]`  | 是 | -  |
+| styles  | css 相关资源  | `String[]`  | 是 | - |
 
 ### 手动加载规范
 
@@ -175,7 +175,7 @@ const APP = () => {
 
 | 配置	 | 说明	 | 类型	 | 是否必填	| 默认值 |
 | ------ | ------ | ------ | ------ | ------ |
-| createMicroApp  | 注册 app 微应用入口 | IConfig  | 是 | [] |
+| createMicroApp  | 注册 app 微应用入口 | `IConfig`  | 是 | [] |
 
 
 ### 返回实例规范
@@ -185,14 +185,4 @@ const APP = () => {
 | load  | 加载子应用 | -  | - | - |
 | mount  | 子应用生命周期 - 装载后触发 | `HTMLElement/Props `  | - | - |
 | unmount  | 子应用生命周期 - 卸载后触发 | -  | - | - |
-| update  | 子应用生命周期 - 更新时触发 | props  | - | - |
-
-
-
-
-
-
-
-
-
-
+| update  | 子应用生命周期 - 更新时触发 | `props`  | - | - |
